@@ -7,4 +7,8 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
     render :show
   end
+  def new
+    @chef = Chef.new
+    render :new
+  end
 end
