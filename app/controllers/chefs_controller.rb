@@ -3,4 +3,8 @@ class ChefsController < ApplicationController
     @chefs = Chef.all
     render :index
   end
+  def show
+    @chef = Chef.find(params[:id])
+    render :show
+  end
 end

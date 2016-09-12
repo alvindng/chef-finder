@@ -2,7 +2,7 @@
 
 <ul>
   <% @chefs.each do |chef| %>
-    <li><%= chef.name %></li>
+    <li><%= link_to chef.name, chef_path(chef) %></li>
     <li><%= chef.phone %></li>
     <li><%= chef.address %></li>
   <% end %>
