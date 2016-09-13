@@ -12,6 +12,10 @@ class DishesController < ApplicationController
       render :new
     end
   end
+  def show
+    @chef = Chef.find(params[:chef_id])
+    @dish = Dish.find(params[:id])
+  end
 
   private
   def dish_params

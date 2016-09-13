@@ -1,0 +1,11 @@
+<h2><%= @dish.name %></h2>
+<h3><%= @dish.description %></h3>
+<%= image_tag @dish.image %>
+<h5><em>by: <%= @dish.chef.name %></em></h5>
+
+<p><%= link_to "Edit Dish", edit_chef_dish_path(@chef, @dish) %></p>
+<p><%= link_to "Delete Dish", chef_dish_path(@chef, @dish),
+                              :data => {:confirm => "You Sure?",
+                                        :method => "delete"}%></p>
+
+<p><%= link_to "Return to Chef", chef_path(@chef) %></p>
