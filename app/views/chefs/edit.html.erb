@@ -1,0 +1,20 @@
+<h1>Edit <%=@chef.name%></h1>
+
+<% if @chef.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @chef.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @chef do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.submit  %>
+<% end %>
