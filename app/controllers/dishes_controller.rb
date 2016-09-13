@@ -16,6 +16,19 @@ class DishesController < ApplicationController
     @chef = Chef.find(params[:chef_id])
     @dish = Dish.find(params[:id])
   end
+  def edit
+    @chef = Chef.find(params[:chef_id])
+    @dish = Dish.find(params[:id])
+  end
+  def update
+    @chef = Chef.find(params[:chef_id])
+    @dish = Dish.find(params[:id])
+    if @dish.update(dish_params)
+      redirect_to chef_dish_path(@chef, @dish)
+    else
+      render :edit
+    end
+  end
 
   private
   def dish_params
