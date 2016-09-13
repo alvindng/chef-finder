@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Chef do
+describe Dish do
   it { should validate_presence_of :name }
-  it { should have_many :dishes }
+  it { should belong_to :chef }
 end
