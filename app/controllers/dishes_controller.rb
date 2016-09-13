@@ -7,6 +7,7 @@ class DishesController < ApplicationController
     @chef = Chef.find(params[:chef_id])
     @dish = @chef.dishes.new(dish_params)
     if @dish.save
+      flash[:alert] = "Dish Added Successfully!"
       redirect_to chef_path(@dish.chef)
     else
       render :new
