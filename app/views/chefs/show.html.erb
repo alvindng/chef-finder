@@ -2,8 +2,22 @@
 <li><%= @chef.phone %></li>
 <li><%= @chef.address %></li>
 
-<p><%= link_to "Edit", edit_chef_path(@chef) %></p>
-<p><%= link_to "Delete", chef_path(@chef),
+<br>
+<% if @chef.dishes.any? %>
+  <div class="sentences">
+    <% @chef.dishes.each do |dish| %>
+      <%= link_to dish.name, chef_dish_path(@chef, dish) %>
+    <% end %>
+  </div>
+<% else %>
+  <p>This chef has no dishes yet!</p>
+<% end %>
+
+<hr>
+
+<p><%= link_to "Add a Dish", new_chef_dish_path(@chef) %></p>
+<p><%= link_to "Edit Chef", edit_chef_path(@chef) %></p>
+<p><%= link_to "Delete Chef", chef_path(@chef),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
-<p><%= link_to "Return to Chefs", chefs_path %></p>
+<p><%= link_to "Return to All Chefs", chefs_path %></p>
