@@ -31,6 +31,11 @@ class ChefsController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    @chef = Chef.find(params[:id])
+    @chef.destroy
+    redirect_to chefs_path
+  end
 
 private
 def chef_params

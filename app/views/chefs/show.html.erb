@@ -1,4 +1,9 @@
 <h1><%= @chef.name %></h1>
 <li><%= @chef.phone %></li>
 <li><%= @chef.address %></li>
+
+<p><%= link_to "Edit", edit_chef_path(@chef) %></p>
+<p><%= link_to "Delete", chef_path(@chef),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
 <p><%= link_to "Return to Chefs", chefs_path %></p>
