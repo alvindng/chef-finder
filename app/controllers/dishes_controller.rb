@@ -33,7 +33,7 @@ class DishesController < ApplicationController
     @chef = Chef.find(params[:chef_id])
     @dish = Dish.find(params[:id])
     @dish.destroy
-    flash[:alert] = "Dish Deleted Successfully!"
+    flash[:alert] = "Dish Deleted Successfully"
     redirect_to chef_path(@chef)
   end
 
