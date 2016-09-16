@@ -1,4 +1,5 @@
 class DishesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def new
     @chef = Chef.find(params[:chef_id])
     @dish = @chef.dishes.new

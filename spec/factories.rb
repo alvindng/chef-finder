@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :user do
+    
+  end
   factory(:chef) do
     name('Mo Johnson')
     phone('312-555-5555')
