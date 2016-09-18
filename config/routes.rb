@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root :to => 'chefs#index'
+  root :to => 'application#index'
 
-  resources :chefs do
+  resources :users do
     resources :dishes
   end
+
 end
