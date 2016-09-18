@@ -214,14 +214,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-<<<<<<< HEAD
   devise
-  factory_girl_rails
-=======
->>>>>>> parent of df1847c... add factorygirl gem and initial testing
-=======
->>>>>>> parent of df1847c... add factorygirl gem and initial testing
   jbuilder (~> 2.5)
   jquery-rails
   launchy
