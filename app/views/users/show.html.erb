@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1><%= @user.email %></h1>
+  <h1><%= @user.name %></h1>
   <% if @user.id === current_user.id %>
     <%= button_to "New Dish", new_user_dish_path(@user), class: 'btn-primary btn', :method => "get" %>
   <% end %>
@@ -14,3 +14,5 @@
 <% else%>
 <h1>no dishes yet!</h1>
 <% end %>
+
+<p><%= link_to "Edit Chef", edit_user_path(@user) %></p>
