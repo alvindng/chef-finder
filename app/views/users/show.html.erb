@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h1><%= @user.email %></h1>
+  <% if @user.id === current_user.id %>
+    <%= button_to "New Dish", new_user_dish_path(@user), class: 'btn-primary btn', :method => "get" %>
+  <% end %>
+</div>
+
+<% if @user.dishes.any? %>
+    <% @user.dishes.each do |dish| %>
+      <%=link_to user_dish_path(@user,dish) do %>
+        <%= dish.name%>
+      <% end %>
+    <% end %>
+<% else%>
+<h1>no dishes yet!</h1>
+<% end %>
