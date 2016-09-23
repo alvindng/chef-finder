@@ -1,24 +1,26 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/alvinng/Desktop/chef_finder/spec/features/add_chef_pages_spec.rb": [
+      "/Users/alvinng/Desktop/chef_finder/spec/features/add_user_pages_spec.rb": [
         1,
         null,
         1,
         1,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         1,
         1,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -62,7 +64,15 @@
         null,
         null,
         null,
+        null,
         1,
+        1,
+        null,
+        null,
+        1,
+        8,
+        8,
+        null,
         null,
         null,
         null,
@@ -596,13 +606,13 @@
         1,
         null,
         1,
-        0,
+        2,
         null,
         null,
         1,
         1,
-        0,
-        0,
+        4,
+        1,
         null,
         null,
         null
@@ -735,7 +745,7 @@
         null,
         null,
         1,
-        0,
+        2,
         null,
         null,
         1,
@@ -787,6 +797,17 @@
         null
       ],
       "/Users/alvinng/Desktop/chef_finder/spec/factories.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
         1,
         1,
         1,
@@ -844,6 +865,6 @@
         null
       ]
     },
-    "timestamp": 1474659696
+    "timestamp": 1474668154
   }
 }
