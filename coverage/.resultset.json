@@ -731,6 +731,29 @@
         1,
         0,
         null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/alvinng/Desktop/chef_finder/app/jobs/application_job.rb": [
@@ -815,6 +838,6 @@
         null
       ]
     },
-    "timestamp": 1474241375
+    "timestamp": 1474492936
   }
 }
