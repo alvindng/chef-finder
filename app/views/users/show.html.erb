@@ -1,10 +1,11 @@
 <div class="jumbotron">
   <h1><%= @user.name %></h1>
   <% if @user.id === current_user.id %>
-    <%= button_to "New Dish", new_user_dish_path(@user), class: 'btn-primary btn', :method => "get" %>
+    <%= link_to "New Dish", new_user_dish_path(@user), id: "new_dish_link", class: 'btn-primary btn', remote: true %>
   <% end %>
 </div>
-
+<li><%= @user.phone %></li>
+<li><%= @user.address %></li>
 <% if @user.dishes.any? %>
     <% @user.dishes.each do |dish| %>
       <%=link_to user_dish_path(@user,dish) do %>
@@ -12,7 +13,7 @@
       <% end %>
     <% end %>
 <% else%>
-<h1>no dishes yet!</h1>
+<p>This chef has no dishes yet!</p>
 <% end %>
 
 <p><%= link_to "Edit Chef", edit_user_path(@user) %></p>
