@@ -1,3 +1,4 @@
 $('#new_dish_link').show();
-$('#' + <%=@dish.id%>).hide();
+$('#new_dish_form').hide();
 $('#dishes_display').append('<%= j render(@dish)%>');
+$('#no_dishes').hide();

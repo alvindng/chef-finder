@@ -1,16 +1,5 @@
 
 <% if @user.dishes.any?%>
 
-<table class="pretty">
-  <tr>
-    <th>Date</th>
-    <th>Rating</th>
-  </tr>
-  <tr>
-
-    <td>Name: <%= dish.name%></td>
-    <td>Description: <%= dish.description%></td>
-
-  </tr>
-</table>
+<li><%=link_to @dish.name, user_dish_path(@user,dish)%></li>
 <%end %>

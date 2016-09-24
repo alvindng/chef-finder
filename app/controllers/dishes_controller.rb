@@ -16,11 +16,11 @@ class DishesController < ApplicationController
     @user = current_user
     @dish = @user.dishes.new(dish_params)
     if @dish.save
-      flash[:alert] = "Dish Added Successfully!"
       respond_to do |format|
         format.html { redirect_to user_path(@user) }
         format.js
       end
+      flash[:notice] = "Dish Added Successfully!"
     else
       render :new
     end
