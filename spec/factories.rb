@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :profile do
+    
+  end
   factory(:user) do
     name('frank lin')
     phone('frank lin')

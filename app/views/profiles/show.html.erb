@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Name: <%= @profile.name %></h3>
+<h3>Description: <%= @profile.description %></h3>
+<h3>Latitude: <%= @profile.latitude %></h3>
+<h3>Longitude: <%= @profile.longitude %></h3>
+<h3>Street Address: <%= @profile.address1 %></h3>
+<h3>Address Line 2: <%= @profile.address2 %></h3>
+<h3>City : <%= @profile.city %></h3>
+<h3>State: <%= @profile.state %></h3>
+<h3>Zip Code: <%= @profile.zipcode %></h3>
+<h3>Phone: <%= @profile.phone %></h3>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
