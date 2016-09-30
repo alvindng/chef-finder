@@ -5,6 +5,16 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @hash = Gmaps4rails.build_markers(@profiles) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      marker.infowindow user.description
+      marker.picture({
+       "url" => "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+       "width" =>  32,
+       "height" => 32})
+       marker.json({:name => user.name })
+    end
   end
 
   # GET /profiles/1
