@@ -1,5 +1,5 @@
 class Dish < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :profile
 
   validates :name, :presence => true
 end

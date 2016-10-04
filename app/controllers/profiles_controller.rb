@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-
+    @profile.user = current_user
     respond_to do |format|
       if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
@@ -45,6 +45,7 @@ class ProfilesController < ApplicationController
         format.html { render :new }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
+
     end
   end
 
