@@ -2,7 +2,12 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    new_user_profile_path(resource)
+    if user_signed_in? &&current_user.profile
+      user_profile_path(current_user, current_user.profile)
+    elsif user_signed_in?
+      new_user_profile_path(resource)
+    end
+
   end
 
   def users

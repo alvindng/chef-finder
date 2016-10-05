@@ -27,9 +27,10 @@
           <%= image_tag 'logo.png', class: 'navbar-brand' %>
         <% end %> -->
         <ul class="nav navbar-nav">
-          <% if user_signed_in?%>
+          <% if user_signed_in? &&current_user.profile%>
           <li><%= link_to "View Profile", user_profile_path(current_user, current_user.profile)%></li>
-          <li><a href="#">Create</a></li>
+          <% elsif user_signed_in?%>
+            <li><%= link_to "Create a New Profile", new_user_profile_path(current_user)%></li>
           <% end %>
         </ul>
       </div>
