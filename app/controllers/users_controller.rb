@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @users = User.all
   end
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     render :edit
   end
+
   def update
     @user= User.find(params[:id])
     if @user.update(user_params)
@@ -19,6 +21,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+  
   def destroy
     @user = User.find(params[:id])
     @user.destroy

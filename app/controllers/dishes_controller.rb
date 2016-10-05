@@ -3,21 +3,23 @@ class DishesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @images = Image.all
+    @dishes = Dish.all
   end
   def new
     @user = current_user
-    @dish = @user.dishes.new
-    if @user.id != current_user.id
-      redirect_to user_path(@user)
+    @profile = Profile.find(params[:profile_id])
+    @dish = @profile.dishes.new
+    if @profile.user.id != current_user.id
+      redirect_to profile_path(@profile)
     end
   end
   def create
     @user = current_user
-    @dish = @user.dishes.new(dish_params)
+    @profile = Profile.find(params[:profile_id])
+    @dish = @profile.dishes.new(dish_params)
     if @dish.save
       respond_to do |format|
-        format.html { redirect_to user_path(@user) }
+        format.html { redirect_to profile_path(@profile) }
         format.js
       end
       flash[:notice] = "Dish Added Successfully!"
@@ -26,28 +28,30 @@ class DishesController < ApplicationController
     end
   end
   def show
-    @user = User.find(params[:user_id])
+    @profile = Profile.find(params[:profile_id])
     @dish = Dish.find(params[:id])
   end
   def edit
-    @user = User.find(params[:user_id])
+    @profile = Profile.find(params[:profile_id])
     @dish = Dish.find(params[:id])
   end
   def update
     @user = current_user
+    @profile = Profile.find(params[:profile_id])
     @dish = Dish.find(params[:id])
     if @dish.update(dish_params)
-      redirect_to user_dish_path(@user, @dish)
+      redirect_to profile_dish_path(@profile, @dish)
     else
       render :edit
     end
   end
   def destroy
     @user = current_user
+    @profile = Profile.find(params[:profile_id])
     @dish = Dish.find(params[:id])
     @dish.destroy
     flash[:alert] = "Dish Deleted Successfully"
-    redirect_to user_path(@user)
+    redirect_to profile_path(@profile)
   end
 
   private

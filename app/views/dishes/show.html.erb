@@ -1,11 +1,11 @@
 <h2><%= @dish.name %></h2>
 <h3><%= @dish.description %></h3>
 <%= image_tag @dish.image %>
-<h5><em>by: <%= @dish.user.email %></em></h5>
+<h5><em>by: <%= @dish.profile.user.email %></em></h5>
 
-<p><%= link_to "Edit Dish", edit_user_dish_path(@user, @dish) %></p>
-<p><%= link_to "Delete Dish", user_dish_path(@user, @dish),
+<p><%= link_to "Edit Dish", edit_profile_dish_path(@profile, @dish) %></p>
+<p><%= link_to "Delete Dish", profile_dish_path(@profile, @dish),
                               :data => {:confirm => "You Sure?",
                                         :method => "delete"}%></p>
 
-<p><%= link_to "Return to Chef", user_path(@user) %></p>
+<p><%= link_to "Return to Chef", profile_path(@profile) %></p>

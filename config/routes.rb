@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  root :to => 'application#index'
   devise_for :users
-  root :to => 'profiles#index'
 
   resources :users do
     resources :profiles
@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   resources :profiles do
     resources :dishes
   end
-
 end

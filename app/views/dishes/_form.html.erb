@@ -1,6 +1,6 @@
 <%= render('layouts/errors', :object => @dish) %>
 
-<%= form_for [@user, @dish], html: { id: 'new_dish_form' }, remote: true do |f| %>
+<%= form_for [@profile, @dish], html: { id: 'new_dish_form' }, remote: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :description %>

@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -25,6 +26,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
+    @user = User.find(params[:user_id])
     @profile = Profile.new
   end
 

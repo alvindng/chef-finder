@@ -1,5 +1,5 @@
 
-<% if @user.dishes.any?%>
+<% if @profile.dishes.any?%>
 
-<li><%=link_to @dish.name, user_dish_path(@user,dish)%></li>
+<li><%=link_to @dish.name, profile_dish_path(@profile,dish)%></li>
 <%end %>

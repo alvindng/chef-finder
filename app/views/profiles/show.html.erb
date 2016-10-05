@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="jumbotron">
 <h3>Name: <%= @profile.name %></h3>
 <h3>Description: <%= @profile.description %></h3>
 <h3>Latitude: <%= @profile.latitude %></h3>
@@ -10,7 +11,31 @@
 <h3>State: <%= @profile.state %></h3>
 <h3>Zip Code: <%= @profile.zipcode %></h3>
 <h3>Phone: <%= @profile.phone %></h3>
+</div>
 
+  <% if @profile.user.id === current_user.id %>
+    <%= link_to "Add New Dish", new_profile_dish_path(@profile), id: "new_dish_link", class: 'btn-primary btn', remote: true %>
+  <% end %>
+
+  <h3>Dishes:</h3>
+    <ul id="dishes_display">
+      <% @profile.dishes.each do |dish|%>
+        <li><%=link_to dish.name, profile_dish_path(@profile, dish)%></li>
+      <% end %>
+    </ul>
+  <div id="no_dishes">
+    <% if @profile.dishes.empty? %>
+    <p>This chef has no dishes yet!</p>
+    <% end %>
+  </div>
+
+  <script>
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  </script>
+
+  <div style='width: 800px;'>
+    <div id="map" style='width: 800px; height: 400px;'></div>
+  </div>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
