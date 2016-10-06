@@ -19,7 +19,7 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%=profile.name%></td>
+        <td><%= link_to profile.name, profile_path(profile)%></td>
         <td><%=profile.description%></td>
         <td><%=profile.address1%></td>
         <td><%=profile.address2%></td>
@@ -27,9 +27,10 @@
         <td><%=profile.state%></td>
         <td><%=profile.zipcode%></td>
         <td><%=profile.phone%></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Remove', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.id === profile.user.id %>
+          <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+          <td><%= link_to 'Remove', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
