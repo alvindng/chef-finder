@@ -2,13 +2,11 @@
 
 <h1>Profiles</h1>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
       <th>Street Address</th>
       <th>Address Line 2</th>
       <th>City </th>
@@ -23,8 +21,6 @@
       <tr>
         <td><%=profile.name%></td>
         <td><%=profile.description%></td>
-        <td><%=profile.latitude%></td>
-        <td><%=profile.longitude%></td>
         <td><%=profile.address1%></td>
         <td><%=profile.address2%></td>
         <td><%=profile.city%></td>
@@ -33,7 +29,7 @@
         <td><%=profile.phone%></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
