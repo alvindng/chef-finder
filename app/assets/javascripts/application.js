@@ -11,6 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.min
+//= require skel.min
+//= require jquery.scrollgress.min
+//= require jquery.dropotron.min
+//= require jquery.scrolly.min
+//= require util
+//= require main
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore

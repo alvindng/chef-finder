@@ -27,7 +27,7 @@
         <td><%=profile.state%></td>
         <td><%=profile.zipcode%></td>
         <td><%=profile.phone%></td>
-        <% if current_user.id === profile.user.id %>
+        <% if current_user && current_user.id === profile.user.id %>
           <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
           <td><%= link_to 'Remove', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
