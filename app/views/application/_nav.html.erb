@@ -1,5 +1,5 @@
 <!-- Header -->
-  <header id="header" class="alt">
+  <header id="header" class="">
     <h1 id="logo"><span><%= link_to 'CHEF', root_path%></span></h1>
     <nav id="nav">
       <ul>
@@ -28,17 +28,15 @@
         </li>
         <% end %>
         <li><%= link_to "View All Chefs", profiles_path%></li>
-        <li class="current"><a href="index.html">Welcome</a></li>
+        <li><%= link_to "Welcome", root_path%></li>
         <% if user_signed_in? %>
           <li><%= link_to "Edit Account", edit_user_registration_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <li class="bumpdown">Logged in as <%= current_user.email %></li>
         <% else %>
           <li><%= link_to "Sign In", new_user_session_path %></li>
-          <li ><%= button_to "Sign Up", new_user_registration_path, :method => "get", class: 'btn btn-primary' %></button></li>
+          <li ><%= link_to "Sign Up", new_user_registration_path, :method => "get", class: 'button special' %></li>
         <% end %>
-
-        <li><a href="#" class="button special">Sign Up</a></li>
       </ul>
     </nav>
   </header>
