@@ -10,4 +10,7 @@ class Profile < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode, if: ->(obj){ obj.address1.present? and obj.address1_changed? }
 
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
 end
