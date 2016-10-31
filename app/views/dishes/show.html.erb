@@ -1,5 +1,6 @@
 <h2><%= @dish.name %></h2>
 <h3><%= @dish.description %></h3>
+<%= image_tag(@dish.photo.url(:medium)) %>
 <%= image_tag @dish.image %>
 <h5><em>by: <%= @dish.profile.user.email %></em></h5>
 

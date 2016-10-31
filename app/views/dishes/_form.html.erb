@@ -1,11 +1,21 @@
 <%= render('layouts/errors', :object => @dish) %>
 
 <%= form_for [@profile, @dish], html: { id: 'new_dish_form' }, remote: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :image %>
-  <%= f.text_field :image %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+  <div class="form-group">
+    <%= f.label :photo, 'Upload a photo of your dish'  %>
+    <p><%= f.file_field :photo %></p>
+  </div>
   <p><%= f.submit %></p>
 <% end %>
