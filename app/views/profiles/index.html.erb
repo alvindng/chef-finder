@@ -2,13 +2,12 @@
 
 <h1>Profiles</h1>
 
-<table class='table'>
+<table class='table-responsive'>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
       <th>Street Address</th>
-      <th>Address Line 2</th>
       <th>City </th>
       <th>State</th>
       <th>Zip Code</th>
@@ -22,7 +21,6 @@
         <td><%= link_to profile.name, profile_path(profile)%></td>
         <td><%=profile.description%></td>
         <td><%=profile.address1%></td>
-        <td><%=profile.address2%></td>
         <td><%=profile.city%></td>
         <td><%=profile.state%></td>
         <td><%=profile.zipcode%></td>

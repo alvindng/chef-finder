@@ -17,6 +17,8 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
 $base-color: #1989d9;
 
@@ -25,5 +27,11 @@ body {
 }
 
 .form-control {
-color: yellow;
+  color: yellow;
+}
+
+.recipe-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

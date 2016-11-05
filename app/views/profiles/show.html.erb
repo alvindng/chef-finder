@@ -17,8 +17,11 @@
   <h3>Dishes:</h3>
     <ul id="dishes_display">
       <% @profile.dishes.each do |dish|%>
-        <li><%= image_tag(dish.photo.url(:medium)) %></li>
-        <li><%=link_to dish.name, profile_dish_path(@profile, dish)%></li>
+      <div class="recipe-block">
+        <li>
+          <%=link_to( image_tag(dish.photo.url(:medium)), profile_dish_path(@profile, dish), :class=>"responsive") %>
+        </li>
+      </div>
       <% end %>
     </ul>
   <div id="no_dishes">

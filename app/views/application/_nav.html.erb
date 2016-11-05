@@ -1,6 +1,6 @@
 <!-- Header -->
   <header id="header" class="">
-    <h1 id="logo"><span><%= link_to 'CHEF', root_path%></span></h1>
+    <h1 id="logo"><span><%= link_to 'Chef Tonight', root_path%></span></h1>
     <nav id="nav">
       <ul>
         <% if user_signed_in? &&current_user.profile%>
@@ -28,7 +28,6 @@
         </li>
         <% end %>
         <li><%= link_to "View All Chefs", profiles_path%></li>
-        <li><%= link_to "Welcome", root_path%></li>
         <% if user_signed_in? %>
           <li><%= link_to "Edit Account", edit_user_registration_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
