@@ -23,7 +23,7 @@
 $base-color: #1989d9;
 
 body {
-  background-color: rgba($base-color, .2)
+  background-color: rgba($base-color, .1)
 }
 
 .form-control {
@@ -34,4 +34,21 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+#banner {
+  background-image: url('https://static.pexels.com/photos/6305/holidays-dinner-eating-lunch.jpg');
+}
+
+.nav-avatar {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
 }
