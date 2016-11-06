@@ -31,6 +31,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-amazon'
+gem 'omniauth-google'
+gem 'omniauth-github'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
