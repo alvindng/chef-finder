@@ -156,6 +156,8 @@ GEM
     omniauth-amazon (1.0.1)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-facebook (4.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-github (1.1.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
@@ -327,6 +329,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   omniauth
   omniauth-amazon
+  omniauth-facebook
   omniauth-github
   omniauth-google
   omniauth-twitter

@@ -11,7 +11,7 @@
 </div>
 
   <% if @profile.user.id === current_user.id %>
-    <%= link_to "Add New Dish", new_profile_dish_path(@profile), id: "new_dish_link", :method => "get", class: 'btn btn-primary', remote: true %>
+    <%= link_to "Add New Dish", new_profile_dish_path(@profile), id: "new_dish_link", :method => "get", class: 'btn button special', remote: true %>
   <% end %>
 
   <h3>Dishes:</h3>
