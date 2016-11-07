@@ -5,35 +5,20 @@
     <% end %>
     <nav id="nav">
       <ul>
-        <% if user_signed_in? &&current_user.profile%>
+        <% if user_signed_in? && !current_user.profile%>
+        <li><%= link_to "Create a New Profile", new_user_profile_path(current_user)%></li>
+        <%end%>
+        <% if user_signed_in? && current_user.profile%>
           <li><%= link_to "View Profile", user_profile_path(current_user, current_user.profile)%></li>
           <li><%= link_to "View All Chefs", profiles_path%></li>
-        <% elsif user_signed_in?%>
-          <li class="submenu">
-            <a href="#">Layouts</a>
-            <ul>
-              <li><a href="left-sidebar.html">Left Sidebar</a></li>
-              <li><a href="right-sidebar.html">Right Sidebar</a></li>
-              <li><a href="no-sidebar.html">No Sidebar</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li class="submenu">
-                <a href="#">Submenu</a>
-                <ul>
-                  <li><a href="#">Dolore Sed</a></li>
-                  <li><a href="#">Consequat</a></li>
-                  <li><a href="#">Lorem Magna</a></li>
-                  <li><a href="#">Sed Magna</a></li>
-                  <li><a href="#">Ipsum Nisl</a></li>
-                  <li><%= link_to "Create a New Profile", new_user_profile_path(current_user)%></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
         <% end %>
         <% if user_signed_in? %>
           <li><%= link_to "Edit Account", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
-          <li>Hello, <%= current_user.profile.name %> <%= image_tag(current_user.profile.avatar.url(:thumb), class: 'nav-avatar') %></li>
+          <% if current_user.profile %>
+            <li><%= current_user.profile.name %><%= image_tag(current_user.profile.avatar.url(:thumb), class: 'nav-avatar') %>
+            <% end %>
+          </li>
         <% else %>
           <li><%= link_to "Sign In", new_user_session_path %></li>
           <li ><%= link_to "Sign Up", new_user_registration_path, :method => "get", class: 'button special' %></li>

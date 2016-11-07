@@ -1,6 +1,9 @@
 <div class="jumbotron">
 <h2><%= @profile.name %></h2>
 <%= image_tag(@profile.avatar.url(:thumb), class: 'img-circle') %>
+<%= @profile.user.chef %>
+
+
 <p>Description: <%= @profile.description %></p>
 <p>Street Address: <%= @profile.address1 %></p>
 <p>Address Line 2: <%= @profile.address2 %></p>

@@ -21,6 +21,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :role, "Yes" %><br />
+    <%= f.select :role, :collection => User.roles.keys.to_a%><br />
+  </div>
+
   <div class="actions">
     <%= f.submit "Create Account" %>
   </div>
