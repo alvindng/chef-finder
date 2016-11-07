@@ -1,8 +1,7 @@
-<div class="jumbotron">
+<div class="wrapper style2 container special">
 <h2><%= @profile.name %></h2>
-<%= image_tag(@profile.avatar.url(:thumb), class: 'img-circle') %>
-<%= @profile.user.chef %>
-
+<%= image_tag(@profile.avatar.url(:thumb), class: 'img-rounded') %>
+<%= @profile.user.role %>
 
 <p>Description: <%= @profile.description %></p>
 <p>Street Address: <%= @profile.address1 %></p>
