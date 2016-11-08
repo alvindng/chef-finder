@@ -68,7 +68,7 @@
 	}
 
 	body, input, select, textarea {
-		color: _palette(fg);
+		color: _palette(bg);
 		font-family: 'Lato', sans-serif;
 		font-size: 15pt;
 		font-weight: 300;
@@ -227,7 +227,7 @@
 		@include vendor('transition', ('background-color 0.2s ease-in-out', 'border-color 0.2s ease-in-out'));
 		@include vendor('appearance', 'none');
 		background: none;
-		border: solid 1px _palette(border);
+		border: solid 1px _palette(one, bg);
 		color: inherit;
 		display: block;
 		padding: 0.75em;
@@ -583,12 +583,15 @@
 		}
 
 		&.style2 {
-			background-color: _palette(one, bg);
+			background-color: _palette(banner, inner-bg);
+			background: transparentize(_palette(banner, inner-bg), 0.5);
 			background-image: url('images/light-bl.svg'), url('images/light-br.svg');
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
 			background-size: $pattern-background-size, $pattern-background-size;
 			color: _palette(one, fg);
+			border: 1px solid;
+			border-color: _palette(one,bg);
 
 			.button {
 				&:hover {
@@ -914,7 +917,7 @@
 	#footer {
 		background: _palette(footer, bg);
 		color: _palette(footer, fg);
-		padding: 5em 5em 10em 5em;
+		padding: 5em 5em 5em 5em;
 		text-align: center;
 
 		.copyright {

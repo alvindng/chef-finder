@@ -1,4 +1,5 @@
 <p><%= link_to object.name,profile_path(object) %></p>
-<p><%=object.address1%></p>
-<p><%=object.address2%></p>
+<p><%=image_tag(object.avatar.url(:thumb))%></p>
+
+<p><%=object.full_address%></p>
 <p><%=object.city%>, <%=object.state%> <%=object.zipcode%></p>

@@ -1,21 +1,36 @@
-<div class="wrapper style2 container special">
-<h2><%= @profile.name %></h2>
-<%= image_tag(@profile.avatar.url(:thumb), class: 'img-rounded') %>
-<%= @profile.user.role %>
+<div class="row">
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-sm-2">
+        <h2><%= @profile.name %></h2>
+        <h3><%= @profile.user.role %></h3>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag(@profile.avatar.url(:medium), class: 'responsive img-rounded') %>
 
-<p>Description: <%= @profile.description %></p>
-<p>Street Address: <%= @profile.address1 %></p>
-<p>Address Line 2: <%= @profile.address2 %></p>
-<p>City : <%= @profile.city %></p>
-<p>State: <%= @profile.state %></p>
-<p>Zip Code: <%= @profile.zipcode %></p>
-<p>Phone: <%= @profile.phone %></p>
+      </div>
+    </div>
+
+    <div class="wrapper style2 special">
+
+      <p>Description: <%= @profile.description %></p>
+      <p>Street Address: <%= @profile.address1 %></p>
+      <p>Address Line 2: <%= @profile.address2 %></p>
+      <p>City : <%= @profile.city %></p>
+      <p>State: <%= @profile.state %></p>
+      <p>Zip Code: <%= @profile.zipcode %></p>
+      <p>Phone: <%= @profile.phone %></p>
+    </div>
+  </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
 </div>
-
+<div class="container">
   <% if @profile.user.id === current_user.id %>
     <%= link_to "Add New Dish", new_profile_dish_path(@profile), id: "new_dish_link", :method => "get", class: 'btn button special', remote: true %>
   <% end %>
-
   <h3>Dishes:</h3>
     <ul id="dishes_display">
       <% @profile.dishes.each do |dish|%>
@@ -31,15 +46,12 @@
     <p>This chef has no dishes yet!</p>
     <% end %>
   </div>
+  <% if @profile.user.id === current_user.id %>
+    <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <% end %>
+  <%= link_to 'Back', profiles_path %>
+</div>
 
-  <script>
-      markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  </script>
-
-  <div style='width: 800px;'>
-    <div id="map" style='width: 800px; height: 400px;'></div>
-  </div>
-<% if @profile.user.id === current_user.id %>
-  <%= link_to 'Edit', edit_profile_path(@profile) %> |
-<% end %>
-<%= link_to 'Back', profiles_path %>
+<script type="text/javascript">
+  buildMap(<%=raw @hash.to_json %>);
+</script>

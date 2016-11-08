@@ -9,16 +9,16 @@
         <li><%= link_to "Create a New Profile", new_user_profile_path(current_user)%></li>
         <%end%>
         <% if user_signed_in? && current_user.profile%>
-          <li><%= link_to "View Profile", user_profile_path(current_user, current_user.profile)%></li>
+          <li><%= link_to "View Profile", profile_path(current_user.profile)%></li>
           <li><%= link_to "View All Chefs", profiles_path%></li>
         <% end %>
         <% if user_signed_in? %>
           <li><%= link_to "Edit Account", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
-          <% if current_user.profile %>
+        <% end %>
+        <% if user_signed_in? && current_user.profile %>
             <li><%= current_user.profile.name %><%= image_tag(current_user.profile.avatar.url(:thumb), class: 'nav-avatar') %>
-            <% end %>
-          </li>
+            </li>
         <% else %>
           <li><%= link_to "Sign In", new_user_session_path %></li>
           <li ><%= link_to "Sign Up", new_user_registration_path, :method => "get", class: 'button special' %></li>

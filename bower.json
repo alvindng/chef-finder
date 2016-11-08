@@ -1,0 +1,21 @@
+{
+  "name": "chef_finder",
+  "authors": [
+    "Alvin Ng <alvindng@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "flatpickr": "flatpickr-calendar#^2.0.8"
+  }
+}

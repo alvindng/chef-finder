@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%# Prints out a human-friendly description of the schedule, such as %>
+  <ul>
+  <li><%= @event.schedule.date %></li>
+  <li><%= @event.schedule.day %></li>
+  <li><%= @event.schedule.time %></li>
+  <li><%= @event.schedule.interval %></li>
+  <li><%= @event.schedule.until %></li>
+</ul>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

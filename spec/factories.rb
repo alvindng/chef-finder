@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :event do
+    name "MyString"
+  end
   factory :profile do
     
   end

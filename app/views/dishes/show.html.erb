@@ -2,7 +2,7 @@
 <h3><%= @dish.description %></h3>
 <%= image_tag(@dish.photo.url(:medium)) %>
 <%= image_tag @dish.image %>
-<h5><em>by: <%= @dish.profile.user.email %></em></h5>
+<h5><em>by: <%= @dish.profile.name %></em></h5>
 
 <p><%= link_to "Edit Dish", edit_profile_dish_path(@profile, @dish) %></p>
 <p><%= link_to "Delete Dish", profile_dish_path(@profile, @dish),

@@ -37,6 +37,9 @@ gem 'omniauth-amazon'
 gem 'omniauth-google'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
+gem 'ice_cube'
+gem 'schedulable'
+gem 'date_picker'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
