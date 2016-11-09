@@ -1,0 +1,8 @@
+class AddAttributesToEvent < ActiveRecord::Migration[5.0]
+  def change
+    add_column :events, :date, :date
+    add_column :events, :datetime, :datetime
+    add_column :events, :time, :time
+
+  end
+end

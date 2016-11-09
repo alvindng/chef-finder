@@ -16,6 +16,18 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_picker :date %>
+  </div>
+  <div class="field">
+    <%= f.label :datetime %><br>
+    <%= f.datetime_picker :datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.time_picker :time %>
+  </div>
+  <div class="field">
     <%= f.label :schedule %>
     <%= f.schedule_select :schedule, style: :field_html, input_types: {date: :date_picker, time: :time_picker, datetime: :datetime_picker}%>
   </div>
