@@ -1,17 +1,13 @@
-<div class="row">
-  <div class="col-md-5">
-    <div class="row">
-      <div class="col-sm-2">
-        <h2><%= @profile.name %></h2>
-        <h3><%= @profile.user.role %></h3>
-      </div>
-      <div class="col-sm-4">
-        <%= image_tag(@profile.avatar.url(:medium), class: 'responsive img-rounded') %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-4">
+      <div class="wrapper style2 ">
 
-      </div>
-    </div>
-
-    <div class="wrapper style2 special">
+          <div class="profile-title">
+            <h2><%= @profile.name %></h2>
+            <h3><%= @profile.user.role %></h3>
+            <%= image_tag(@profile.avatar.url(:medium), class: 'responsive img-rounded') %>
+          </div>
 
       <p>Description: <%= @profile.description %></p>
       <p>Street Address: <%= @profile.address1 %></p>
@@ -20,38 +16,36 @@
       <p>State: <%= @profile.state %></p>
       <p>Zip Code: <%= @profile.zipcode %></p>
       <p>Phone: <%= @profile.phone %></p>
-    </div>
-  </div>
-    <div class="col-md-6">
-
-    </div>
-  </div>
-</div>
-<div class="container">
-  <% if @profile.user.id === current_user.id %>
-    <%= link_to "Add New Dish", new_profile_dish_path(@profile), id: "new_dish_link", :method => "get", class: 'btn button special', remote: true %>
-  <% end %>
-  <h3>Dishes:</h3>
-    <ul id="dishes_display">
-      <% @profile.dishes.each do |dish|%>
-      <div class="recipe-block">
-        <li>
-          <%=link_to( image_tag(dish.photo.url(:medium)), profile_dish_path(@profile, dish), :class=>"responsive") %>
-        </li>
       </div>
-      <% end %>
-    </ul>
-  <div id="no_dishes">
-    <% if @profile.dishes.empty? %>
-    <p>This chef has no dishes yet!</p>
-    <% end %>
+    </div>
+    <div class="col-md-6 container">
+      <%= link_to "Book Appointment: #{@profile.name}", new_profile_event_path(@profile), id: "new_event_link", :method => "get", class: 'btn button special', remote: true %>
+    </div>
   </div>
-  <% if @profile.user.id === current_user.id %>
-    <%= link_to 'Edit', edit_profile_path(@profile) %> |
-  <% end %>
-  <%= link_to 'Back', profiles_path %>
-</div>
 
-<script type="text/javascript">
-  buildMap(<%=raw @hash.to_json %>);
-</script>
+    <% if @profile.user.id === current_user.id %>
+      <%= link_to "Add New Dish", new_profile_dish_path(@profile), id: "new_dish_link", :method => "get", class: 'btn button special', remote: true %>
+      <p><%= link_to "View Upcoming Events", profile_events_path(@profile) %></p>
+    <% end %>
+    <div class="container wrapper style2 special">
+      <h3><%=@profile.name%>'s Dishes:</h3>
+        <ul id="dishes_display" class="row">
+          <% @profile.dishes.each do |dish|%>
+            <li class="col-lg-4 col-lg-4 col-lg-4">
+              <%=link_to( image_tag(dish.photo.url(:medium)), profile_dish_path(@profile, dish), :class=>"responsive") %>
+            </li>
+          <% end %>
+        </ul>
+
+      <div id="no_dishes">
+        <% if @profile.dishes.empty? %>
+        <p>This chef has no dishes yet!</p>
+        <% end %>
+      </div>
+      <% if @profile.user.id === current_user.id %>
+        <%= link_to 'Edit', edit_profile_path(@profile) %> |
+      <% end %>
+      <%= link_to 'Back', profiles_path %>
+  </div>
+
+</div>

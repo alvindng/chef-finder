@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109034558) do
+ActiveRecord::Schema.define(version: 20161109071400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,10 @@ ActiveRecord::Schema.define(version: 20161109034558) do
     t.datetime "updated_at", null: false
     t.date     "date"
     t.datetime "datetime"
-    t.time     "time"
+    t.integer  "profile_id"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.index ["profile_id"], name: "index_events_on_profile_id", using: :btree
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -109,5 +112,6 @@ ActiveRecord::Schema.define(version: 20161109034558) do
   end
 
   add_foreign_key "dishes", "profiles"
+  add_foreign_key "events", "profiles"
   add_foreign_key "profiles", "users"
 end

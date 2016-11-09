@@ -1,38 +1,25 @@
-<%= form_for(event) do |f| %>
-  <% if event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<%= render('layouts/errors', :object => @event) %>
 
-      <ul>
-      <% event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_for [@profile, @event], html: { id: 'new_event_form', class:"wrapper style2 special" }, remote: true do |f| %>
+    <h3>Book an Event</h3>
+    <div class="field">
+      <%= f.label :name, "Event Name" %>
+      <%= f.text_field :name %>
     </div>
-  <% end %>
+    <div class="field">
+      <%= f.label :date %><br>
+      <%= f.date_picker :date %>
+    </div>
+    <div class="field">
+      <%= f.label :start_time %><br>
+      <%= f.time_picker :start_time %>
+    </div>
+    <div class="field">
+      <%= f.label :end_time %><br>
+      <%= f.time_picker :end_time %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_picker :date %>
-  </div>
-  <div class="field">
-    <%= f.label :datetime %><br>
-    <%= f.datetime_picker :datetime %>
-  </div>
-  <div class="field">
-    <%= f.label :time %><br>
-    <%= f.time_picker :time %>
-  </div>
-  <div class="field">
-    <%= f.label :schedule %>
-    <%= f.schedule_select :schedule, style: :field_html, input_types: {date: :date_picker, time: :time_picker, datetime: :datetime_picker}%>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

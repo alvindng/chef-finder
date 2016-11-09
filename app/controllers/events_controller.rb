@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    @profile = Profile.find(params[:profile_id])
     @events = Event.all
   end
 
@@ -14,6 +15,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    @profile = Profile.find(params[:profile_id])
     @event = Event.new
   end
 
@@ -24,30 +26,27 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
-
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
+    @profile = Profile.find(params[:profile_id])
+    @event = @profile.events.new(event_params)
+    if @event.save
+      respond_to do |format|
+        format.html { redirect_to profile_event_path(@profile, @event) }
+        format.js
       end
+      flash[:notice] = "Event Added Successfully!"
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    respond_to do |format|
-      if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { render :show, status: :ok, location: @event }
-      else
-        format.html { render :edit }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    @profile = Profile.find(params[:profile_id])
+    if @event.update(event_params)
+      redirect_to profile_event_path(@profile, @event)
+    else
+      render :edit
     end
   end
 
@@ -55,20 +54,19 @@ class EventsController < ApplicationController
   # DELETE /events/1.json
   def destroy
     @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:alert] ='Event was successfully destroyed.'
+    redirect_to profile_path(@profile)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
+      @profile = Profile.find(params[:profile_id])
       @event = Event.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :date, :datetime, :time, schedule_attributes: Schedulable::ScheduleSupport.param_names)
+      params.require(:event).permit(:name, :date, :start_time, :end_time, :datetime)
     end
 end

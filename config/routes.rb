@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :events
   root :to => 'application#index'
   devise_for :users, :controllers => { :registration => "registration", :omniauth_callbacks => "callbacks" }
   devise_scope :user do
@@ -12,5 +11,8 @@ Rails.application.routes.draw do
 
   resources :profiles do
     resources :dishes
+  end
+  resources :profiles do
+    resources :events
   end
 end

@@ -1,24 +1,18 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
+<div class="container wrapper style2 special">
 <p>
   <strong>Schedule:</strong>
-  <%# Prints out a human-friendly description of the schedule, such as %>
-  <ul>
-  <li><%= @event.schedule.date %></li>
-  <li><%= @event.schedule.day %></li>
-  <li><%= @event.schedule.time %></li>
-  <li><%= @event.schedule.interval %></li>
-  <li><%= @event.schedule.until %></li>
-  <li><%= @event.date %></li>
-  <li><%= @event.datetime %></li>
-  <li><%= @event.time %></li>
-</ul>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+  <ul>
+    <li><%= @event.name %></li>
+    <li><%= @event.date %></li>
+    <li><%= @event.profile_id %></li>
+    <li><%= @event.start_time %></li>
+    <li><%= @event.end_time %></li>
+    <li><%= @event.schedule %></li>
+</ul>
+</div>
+
+<%= link_to 'Edit', edit_profile_event_path(@profile,@event) %> |
+<%= link_to 'Back', profile_events_path(@profile) %>

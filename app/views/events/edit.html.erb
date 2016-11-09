@@ -1,6 +1,6 @@
-<h1>Editing Event</h1>
+<h1>Editing Event for <%=@event.date%></h1>
 
 <%= render 'form', event: @event %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', profile_event_path(@profile, @event) %> |
+<%= link_to 'Back', profile_events_path(@profile, @event) %>
