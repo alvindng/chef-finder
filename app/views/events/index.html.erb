@@ -1,27 +1,33 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Events</h1>
-
+<div class="wrapper style2 container special">
+  <h1>Events</h1>
+  <table class='table-responsive events-table'>
 <table>
   <thead>
     <tr>
-      <th colspan="123"></th>
+      <th>Event Name</th>
+      <th>Date</th>
+      <th>Start</th>
+      <th>End</th>
     </tr>
   </thead>
 
   <tbody>
     <% @profile.events.each do |event| %>
       <tr>
-        <td><%= link_to "#{event.name}", profile_event_path(@profile, event) %></td>
-        <td><%= link_to 'Edit', edit_profile_event_path(@profile, event) %></td>
+        <td><%= link_to event.name, profile_event_path(@profile, event)%></td>
+        <td><%=event.date.strftime("%a, %b %d, %Y")%></td>
+        <td><%=event.start_time.strftime("%I:%M%p")%></td>
+        <td><%=event.end_time.strftime("%I:%M%p")%></td>
+        <!-- <td><%= link_to 'Edit', edit_profile_event_path(@profile, event) %></td>
         <td><%=link_to "Delete Event", profile_event_path(@profile, event),
                                       :data => {:confirm => "You Sure?",
-                                                :method => "delete"}%></td>
+                                                :method => "delete"}%></td> -->
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Event', new_profile_event_path %>
