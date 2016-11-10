@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="wrapper style2 container special">
   <h1>Profiles</h1>
-  <table class='table-responsive'>
+  <table class='table-responsive profiles-table'>
     <thead>
       <tr>
         <th>Name</th>
-        <th>Description</th>
+        <th colspan="2">Description</th>
         <th>City </th>
         <th>State</th>
         <th>Zip Code</th>
@@ -16,14 +16,14 @@
       <% @profiles.each do |profile| %>
         <tr>
           <td><%= link_to profile.name, user_profile_path(profile.user, profile)%></td>
-          <td><%=profile.description%></td>
+          <td colspan="2"><%=profile.description%></td>
           <td><%=profile.city%></td>
           <td><%=profile.state%></td>
           <td><%=profile.zipcode%></td>
-
+          <!-- <% if current_user && current_user.id === profile.user.id %>
             <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
             <td><%= link_to 'Remove', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+          <%end%> -->
         </tr>
       <% end %>
     </tbody>
@@ -32,7 +32,7 @@
 <br>
 
 <div class="gmap-container">
-  <div id="map" style='width: 800px; height: 400px;'></div>
+  <div id="map" style='width: 100%; height: 400px;'></div>
 </div>
 
 <script type="text/javascript">

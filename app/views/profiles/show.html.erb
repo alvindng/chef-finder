@@ -9,11 +9,15 @@
         </div>
         <p>Description: <%= @profile.description %></p>
         <p>Street Address: <%= @profile.address1 %></p>
-        <p>Address Line 2: <%= @profile.address2 %></p>
-        <p>City : <%= @profile.city %></p>
-        <p>State: <%= @profile.state %></p>
+        <p>City : <%= @profile.city%>, <%= @profile.state %></p>
         <p>Zip Code: <%= @profile.zipcode %></p>
         <p>Phone: <%= @profile.phone %></p>
+        <p>Specialties:</p>
+        <ul>
+          <% @profile.specialties.each do |specialty| %>
+            <li><%= specialty.name%></li>
+          <% end %>
+        </ul>
       </div>
     </div>
     <div class="col-sm-3 offset-col-sm-3"></div>

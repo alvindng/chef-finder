@@ -58,6 +58,9 @@ body {
 
 #cheffer-instructions {
   color: white;
+  .span {
+    background-color: white;
+  }
 }
 
 .profile-title {
@@ -190,3 +193,20 @@ body {
     height: 100%;
     width: 100%;
 }
+.collection_check_box {
+  display: inline-block;
+  vertical-align: -1px;
+  margin: 5px;
+ }
+.collection_check_box input {
+  display: inline;
+ }
+.collection_check_box .collection_check_boxes{
+  display: inline;
+  vertical-align: -5px;
+ }
+
+.profiles-table {
+    table-layout: fixed;
+    width: 100%;
+ }

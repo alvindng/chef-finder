@@ -169,7 +169,7 @@
 				border-top: solid 1.5px;
 				content: '';
 				height: 7px;
-				opacity: 0.1;
+
 				position: absolute;
 				top: 1.75em;
 				width: 43%;
@@ -198,12 +198,12 @@
 				left: 0;
 				position: absolute;
 				text-align: center;
-				top: 1em;
+				top: .2em;
 				width: 100%;
 
 				&:before {
 					font-size: 3.5em;
-					opacity: 0.35;
+					opacity: 0.7;
 				}
 			}
 		}
