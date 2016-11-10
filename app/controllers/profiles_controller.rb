@@ -13,8 +13,8 @@ class ProfilesController < ApplicationController
       marker.infowindow render_to_string(:partial => "/profiles/infowindow", :locals => { :object => user})
       marker.picture({
        "url" => "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-       "width" =>  32,
-       "height" => 32})
+       "width" =>  50,
+       "height" => 50})
        marker.json({:name => user.name })
     end
   end
@@ -23,16 +23,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @profile = Profile.find(params[:id])
-    @hash = Gmaps4rails.build_markers(@profile) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
-      marker.infowindow render_to_string(:partial => "/profiles/infowindow", :locals => { :object => user})
-      marker.picture({
-       "url" => "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-       "width" =>  32,
-       "height" => 32})
-       marker.json({:name => user.name })
-    end
   end
 
   # GET /profiles/new
@@ -94,6 +84,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:latitude, :longitude, :address1, :address2, :city, :state, :zipcode, :name, :phone, :description, :avatar)
+      params.require(:profile).permit(:latitude, :longitude, :address1, :address2, :city, :state, :zipcode, :name, :phone, :description, :avatar, specialty_ids:[])
     end
 end

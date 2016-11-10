@@ -2,6 +2,7 @@ class Profile < ApplicationRecord
   belongs_to :user
   has_many :dishes
   has_many :events
+  has_and_belongs_to_many :categories
   before_create :full_address
 
   def full_address

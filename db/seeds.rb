@@ -17,3 +17,31 @@ user_list = [
 user_list.each do |email, name, phone, address, password|
   User.create( email: email, name: name, phone: phone, address: address, password: password)
 end
+specialty_list = [
+  "African",
+  "American",
+  "British",
+  "Carribean",
+  "Chinese",
+  "East European",
+  "French",
+  "Greek",
+  "Indian",
+  "Irish",
+  "Italian",
+  "Japanese",
+  "Korean",
+  "Mexican",
+  "Nordic",
+  "North African",
+  "Portuguese",
+  "South African",
+  "Spanish",
+  "Thai and South-East Asian",
+  "Turkish and Middle Eastern"
+]
+
+specialty_list.each do |name|
+  Specialty.create(name: name)
+
+end

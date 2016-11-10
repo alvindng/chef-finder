@@ -36,78 +36,63 @@
 			<!-- Main -->
 				<article id="main">
 					<header class="special">
-						<div class="cheffer-blurb">
 							<span class="icon fa-cutlery"></span>
-							<p>"I love Cheffer because I can quickly host a party without worrying about what food to serve. That peace of mind allows me and my guests to really enjoy ourselves."</p>
-						</div>
 					</header>
 
 					<!-- One -->
 						<section class="wrapper style2 special">
-							<div class="row 50%">
-								<div class="6u 12u(narrower)">
+							<div class="row">
+								<header class="tagline">
+									<h2>The premier online marketplace for personal chefs</h2>
+								</header>
+								<div class="col-sm-6">
 
-									<header>
-										<h2>The premier online marketplace for personal chefs</h2>
-									</header>
 									<p>We aim to revolutionize the food industry by providing a one-stop-shop for hosts to find the perfect chef to craft a personalized and unique dining experience, and providing opportunities for chefs to break free from the restaurant environment and work independently.</p>
+									<section id="cheffer-instructions" class="wrapper style1 special">
+										<section>
+											<span class="icon featured fa-user"></span>
+											<header>
+												<h3>Step One</h3>
+											</header>
+											<p>Create your Profile.</p>
+										</section>
+										<section>
+											<span class="icon featured fa-calendar"></span>
+											<header>
+												<h3>Step Two</h3>
+											</header>
+											<p>Submit Menu and Availability.</p>
+										</section>
+										<section>
+											<span class="icon featured fa-check"></span>
+											<header>
+												<h3>Step Three</h3>
+											</header>
+											<p>Receive and Execute Bookings.</p>
+										</section>
+
+									</section>
 									<footer>
 										<ul class="buttons">
-											<li><a href="#cheffer-instructions" class="button fit scrolly">Find Out More</a></li>
+											<li><a href="#cheffer-start" class="button fit scrolly">Find Out More</a></li>
 										</ul>
 									</footer>
-
 								</div>
-								<div class="6u 12u(narrower) important(narrower)">
-
+								<div class="col-sm-6">
 									<ul class="image featured">
 										<li><%=image_tag(("hero3.jpg"), :class=>"responsive")%></li>
 									</ul>
-
 								</div>
 							</div>
 						</section>
 
-					<!-- Two -->
-						<section id="cheffer-instructions" class="wrapper style1 special">
-							<div class="row">
-								<div class="col-sm-4">
-									<section>
-										<span class="icon featured fa-user"></span>
-										<header>
-											<h3>Step One</h3>
-										</header>
-										<p>Create your Profile.</p>
-									</section>
-								</div>
-								<div class="col-sm-4">
-
-									<section>
-										<span class="icon featured fa-calendar"></span>
-										<header>
-											<h3>Step Two</h3>
-										</header>
-										<p>Submit Menu and Availability.</p>
-									</section>
-
-								</div>
-								<div class="col-sm-4">
-
-									<section>
-										<span class="icon featured fa-check"></span>
-										<header>
-											<h3>Step Three</h3>
-										</header>
-										<p>Receive and Execute Bookings.</p>
-									</section>
-
-								</div>
+								<div class="cheffer-blurb">
+									<h3>"I love Cheffer because I can quickly host a party without worrying about what food to serve. That peace of mind allows me and my guests to really enjoy ourselves." -Mark Twain</h3>
 							</div>
-						</section>
+
 
 					<!-- Three -->
-						<section class="wrapper style3 special">
-
+						<section id="cheffer-start" class="wrapper style3 special">
 							<header class="major">
 								<h2>Next look at this <strong>cool stuff</strong></h2>
 							</header>
@@ -125,7 +110,6 @@
 
 								</div>
 								<div class="col-sm-6">
-
 									<section>
 										<a href="#" class="image featured"><%=image_tag(("hero2.jpg"), :class=>"responsive")%></a>
 										<header>
@@ -133,13 +117,12 @@
 										</header>
 										<p>Sed tristique purus vitae volutpat commodo suscipit amet sed nibh. Proin a ullamcorper sed blandit. Sed tristique purus vitae volutpat commodo suscipit ullamcorper sed blandit lorem ipsum dolore.</p>
 									</section>
-
 								</div>
 							</div>
 
 							<footer class="major">
 								<ul class="buttons">
-									<li><a href="#" class="button">See More</a></li>
+									<li><a href="#cta" class="button scrolly">Let's Get Started</a></li>
 								</ul>
 							</footer>
 
@@ -155,8 +138,8 @@
 					</header>
 					<footer>
 						<ul class="buttons">
-							<li><a href="#" class="button special">Sign Up</a></li>
-							<li><a href="#" class="button"> Log In</a></li>
+							<li ><%= link_to "Sign Up", new_user_registration_path, :method => "get", class: 'button special' %></li>
+							<li><%= link_to "Sign In", new_user_session_path, class: 'button' %></li>
 						</ul>
 					</footer>
 

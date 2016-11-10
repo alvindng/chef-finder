@@ -161,6 +161,7 @@
 			padding-top: 7em;
 			position: relative;
 			text-align: center;
+			color: _palette(one, bg);
 
 			&:before,
 			&:after {
@@ -552,7 +553,7 @@
 
 		&.special {
 			background: _palette(one, bg);
-			border-color: _palette(one, bg);
+			border-color: _palette(banner, inner-bg);
 			color: _palette(one, fg) !important;
 
 			&:hover {
@@ -575,8 +576,8 @@
 /* Wrapper */
 
 	.wrapper {
-		margin-bottom: 5em;
-		padding: 5em;
+		margin-bottom: .5em;
+		padding: 1em;
 
 		&.style1 {
 			padding: 0;
@@ -805,13 +806,13 @@
 	#banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: _palette(three, bg);
-		background-image: url('images/light-bl.svg'), url('images/light-br.svg'), url('images/overlay.png'), url('images/banner.jpg');
+		background-image: url('images/light-bl.svg'), url('images/light-br.svg'), url('images/overlay.png'), url('images/splash.jpg');
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: $pattern-background-size, $pattern-background-size, auto, cover;
 		color: _palette(banner, fg);
 		cursor: default;
-		padding: 6em 0;
+		padding: 10em;
 		text-align: center;
 
 		.inner {
@@ -821,14 +822,14 @@
 			color: _palette(banner, inner-fg);
 			display: inline-block;
 			opacity: 0;
-			padding: 3em;
+			padding: 3em 3em 3em 3em;
 			text-align: center;
 
 			header {
 				display: inline-block;
 				border-bottom: solid 2px;
 				border-top: solid 2px;
-				margin: 0 0 2em 0;
+				margin: 2em 0 2em 0;
 				padding: 3px 0 3px 0;
 
 				h2 {
@@ -858,6 +859,7 @@
 
 			footer {
 				margin: 2em 0 0 0;
+				padding-bottom: 2em;
 			}
 		}
 	}
@@ -1456,7 +1458,9 @@
 			input[type="submit"],
 			input[type="reset"],
 			.button {
-				max-width: 20em;
+				max-width: 25em;
+				border: 1px solid;
+				border-color: white;
 				width: 100%;
 
 				&.fit {

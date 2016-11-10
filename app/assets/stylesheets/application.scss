@@ -20,7 +20,7 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
-$base-color: #37322f;
+$base-color: #0d0d0d;
 
 body {
   background-color: $base-color;
@@ -30,39 +30,30 @@ body {
   color: yellow;
 }
 
-#dishes_display {
-  ul {
-  padding:0 0 0 0;
-  margin:0 0 0 0;
-  }
-  ul li {
-    list-style:none;
-    margin-bottom:25px;
-  }
-  ul li img {
-  cursor: pointer;
-  }
-}
-
 #banner {
-  background-image: image('splash');
+  background-image: image('splash.jpg');
 }
 
 .nav-avatar {
-    background-color: white;
-    border: 1px solid #A89447;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-    text-align: center;
-    img { width: 100% }
+  background-color: white;
+  border: 1px solid #A89447;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  text-align: center;
+  img { width: 100% }
 }
 
 .cheffer-blurb {
   color: white;
+  margin: 5em 0 5em 0;
+  text-align: center;
+  h3 {
+    text-transform: none;
+ }
 }
 
 #cheffer-instructions {
@@ -70,19 +61,132 @@ body {
 }
 
 .profile-title {
-  h2 {
+  h2,h3 {
     color: white;
     z-index:100;
-    position:absolute;
+    position: sticky;
     font-weight:bold;
-    left: 6em;
+    left: 2em;
+    margin: 0px;
+    text-shadow: 2px 2px 2px black;
   }
-  h3 {
-    color: white;
-    z-index:100;
-    position:absolute;
-    font-weight:bold;
-    left: 6em;
-    top: 130px;
-  }
+}
+
+.profile-image {
+  margin-top: 5px;
+}
+
+.dish-image {
+  display: block;
+  max-width:282px;
+  max-height:188px;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  background: #A89447;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 50px 20px;
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  max-width: none;
+  width: calc(100% + 20px);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-10px,0,0);
+  transform: translate3d(-10px,0,0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hovereffect:hover img {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  overflow: hidden;
+  padding: 0.5em 0;
+  background-color: transparent;
+}
+
+.hovereffect h2:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  content: '';
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(-100%,0,0);
+  transform: translate3d(-100%,0,0);
+}
+
+.hovereffect:hover h2:after {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.hovereffect a, .hovereffect p {
+  color: #FFF;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.gmap-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+}
+.gmap-container > *{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
