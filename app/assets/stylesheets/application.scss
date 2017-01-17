@@ -31,7 +31,11 @@ body {
 }
 
 #banner {
-  background-image: url('https://s3.us-east-2.amazonaws.com/chef-express-bucket/splash.jpg');
+  background-image: image('splash.jpg');
+}
+
+#cta {
+  background-image: image('banner.jpg');
 }
 
 .nav-avatar {
@@ -225,4 +229,8 @@ body {
 
 .date-dropbox {
   color: black;
+}
+
+.footer {
+  background-color: black;
 }
