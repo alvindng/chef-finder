@@ -2074,8 +2074,8 @@
 			input[type="submit"].special:hover,
 			input[type="reset"].special:hover,
 			.button.special:hover {
-				background: #96dad1 !important;
-				border-color: #96dad1 !important;
+				background: #b6a252 !important;
+				border-color: #b6a252 !important;
 			}
 
 		input[type="button"].fit,
@@ -2106,7 +2106,7 @@
 		}
 
 		.wrapper.style2 {
-			background-color: #003153;
+			background-color: #341b2b;
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg");
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
@@ -2121,7 +2121,7 @@
 			.wrapper.style2 .button.special {
 				background: #fff;
 				border-color: #fff;
-				color: #003153 !important;
+				color: #341b2b !important;
 			}
 
 				.wrapper.style2 .button.special:hover {
