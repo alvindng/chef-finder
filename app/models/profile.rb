@@ -6,7 +6,7 @@ class Profile < ApplicationRecord
   before_create :full_address
 
   def full_address
-    self.full_address = [address1, address2, city, state, zipcode].join(',');
+    self.full_address = [address1, city, state, zipcode].join(', ');
   end
 
   geocoded_by :full_address

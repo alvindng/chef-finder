@@ -1,21 +1,21 @@
-# Chef Finder
-
-#### _Individual Ruby on Rails Epicodus exercise_
-
+# Chef Express
 #### By _**Alvin Ng**_
 
 ## Description
 
-Find a chef in your local area for hire.
+Find a chef in your local area for hire!
 
 ## Technologies Used
 * HTML
 * Sass
-* Bootstrap
 * Ruby
 * Rails
+* JavaScript
+* Bootstrap
 
 ## Setup/Installation Requirements
+* Visit https://afternoon-hamlet-96736.herokuapp.com or
+
 * `git clone https://github.com/alvindng/chef-finder`
 * change into the new directory
 * `rake:db:migrate db:test:prepare`

@@ -22,8 +22,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-    <%= f.label :role, "Chef or Host?" %><br />
+  <div class="field role-dropbox">
+    <%= f.label :role, "Chef or Host?", :class=> 'role-title' %><br />
     <%= f.select :role, :collection => User.roles.keys.to_a%><br />
   </div>
 

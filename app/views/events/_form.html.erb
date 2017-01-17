@@ -6,16 +6,16 @@
       <%= f.label :name, "Event Name" %>
       <%= f.text_field :name %>
     </div>
-    <div class="field">
-      <%= f.label :date %><br>
+    <div class="field date-dropbox">
+      <%= f.label :date, :class =>"date-title"%><br>
       <%= f.date_picker :date %>
     </div>
-    <div class="field">
-      <%= f.label :start_time %><br>
+    <div class="field date-dropbox">
+      <%= f.label :start_time, :class =>"date-title" %><br>
       <%= f.time_picker :start_time %>
     </div>
-    <div class="field">
-      <%= f.label :end_time %><br>
+    <div class="field date-dropbox">
+      <%= f.label :end_time, :class =>"date-title" %><br>
       <%= f.time_picker :end_time %>
     </div>
 

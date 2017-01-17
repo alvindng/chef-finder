@@ -7,8 +7,9 @@
     <tr>
       <th>Event Name</th>
       <th>Date</th>
-      <th>Start</th>
-      <th>End</th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Host</th>
     </tr>
   </thead>
 
@@ -19,6 +20,7 @@
         <td><%=event.date.strftime("%a, %b %d, %Y")%></td>
         <td><%=event.start_time.strftime("%I:%M%p")%></td>
         <td><%=event.end_time.strftime("%I:%M%p")%></td>
+        <td><%=@profile.full_address%></td>
         <!-- <td><%= link_to 'Edit', edit_profile_event_path(@profile, event) %></td>
         <td><%=link_to "Delete Event", profile_event_path(@profile, event),
                                       :data => {:confirm => "You Sure?",
