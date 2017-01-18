@@ -41,6 +41,7 @@ gem 'ice_cube'
 gem 'schedulable'
 gem 'date_picker'
 gem 'aws-sdk', '~> 2.3'
+gem 'rails_12factor', group: :production
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
