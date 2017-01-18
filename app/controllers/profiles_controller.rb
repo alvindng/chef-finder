@@ -1,12 +1,12 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /profiles
   # GET /profiles.json
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.order(sort_column + " " + sort_direction)
     @hash = Gmaps4rails.build_markers(@profiles) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
@@ -80,6 +80,14 @@ class ProfilesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
       @profile = Profile.find(params[:id])
+    end
+
+    def sort_column
+      Profile.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
