@@ -2052,6 +2052,9 @@
 		text-decoration: none;
 		text-transform: uppercase;
 	}
+	#new_event_link {
+		margin-top: .5em;
+	}
 
 		input[type="button"]:hover,
 		input[type="submit"]:hover,
@@ -3193,7 +3196,4 @@
 				height: 34px;
 			}
 
-	}
-	#new_event_link {
-		margin-top: .5em;
 	}
