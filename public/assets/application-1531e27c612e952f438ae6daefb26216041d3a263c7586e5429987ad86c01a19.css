@@ -19435,22 +19435,22 @@ body {
 }
 
 /* line 55, /Users/alvinng/Desktop/chef_finder/app/assets/stylesheets/application.scss */
-.cheffer-blurb {
+.cuisinary-blurb {
   color: white;
   margin: 5em 0 5em 0;
   text-align: center;
 }
 /* line 59, /Users/alvinng/Desktop/chef_finder/app/assets/stylesheets/application.scss */
-.cheffer-blurb h3 {
+.cuisinary-blurb h3 {
   text-transform: none;
 }
 
 /* line 64, /Users/alvinng/Desktop/chef_finder/app/assets/stylesheets/application.scss */
-#cheffer-instructions {
+#cuisinary-instructions {
   color: white;
 }
 /* line 66, /Users/alvinng/Desktop/chef_finder/app/assets/stylesheets/application.scss */
-#cheffer-instructions .span {
+#cuisinary-instructions .span {
   background-color: white;
 }
 

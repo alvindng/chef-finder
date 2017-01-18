@@ -1,27 +1,52 @@
-# Chef Express
+# Cuisinary
 #### By _**Alvin Ng**_
 
 ## Description
-
-Find a chef in your local area for hire!
+A Rails Web Application for finding and hiring a local chef to elevate your next event!
 
 ## Technologies Used
 * HTML
 * Sass
 * Ruby
 * Rails
-* JavaScript
+* JavaScript/ AJAX
 * Bootstrap
+* AWS
 
 ## Setup/Installation Requirements
-* Visit https://afternoon-hamlet-96736.herokuapp.com or
 
-* `git clone https://github.com/alvindng/chef-finder`
-* change into the new directory
-* `rake:db:migrate db:test:prepare`
-* `rake db:seed` (if seeds do not already appear)
-* `rails s`
-* [http://localhost:3000](http://localhost:3000)
+### Installation and Running Locally
+
+If you do not want to install and instead want to view a live version of the site, you can visit: https://chefexpress.herokuapp.com/ or,
+
+Open Terminal and clone the repository.  
+```
+$ cd Desktop
+$ git clone https://github.com/alvindng/cuisinary
+```
+
+Navigate to the repository and bundle Ruby gems:
+```
+$ cd cuisinary
+$ bundle install
+```
+
+Make sure Postgres is running on your local machine, then setup the database:
+```
+$ rails db:setup db:test:prepare
+```
+
+Create a Google project at `https://console.developers.google.com` and create an API key. Once you have done this, create a .env file in your the project directory and insert the following code.
+```
+GMAPS_KEY=YOUR_API_KEY_HERE
+```
+
+Start the Rails server.
+```
+$ rails s
+```
+
+Open your browser and navigate to `localhost:3000`.
 
 ## Contact
 
