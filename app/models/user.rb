@@ -6,7 +6,20 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable,
   :omniauthable, :omniauth_providers => [:facebook]
+  acts_as_messageable
 
+    # def name
+    #
+    # end
+
+    def mailboxer_email(object)
+      #Check if an email should be sent for that object
+      #if true
+      return "define_email@on_your.model"
+      #if false
+      #return nil
+    end
+    
   enum role: [:Chef, :Host]
 
   def self.from_omniauth(auth)

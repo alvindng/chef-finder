@@ -27,6 +27,7 @@
   </div>
 
   <% if @profile.user.id === current_user.id %>
+  <li><%= link_to 'Your Conversations', conversations_path %></li>
     <%= link_to "Add New Dish", new_profile_dish_path(@profile), id: "new_dish_link", :method => "get", class: 'btn button special', remote: true %>
     <p><%= link_to "View Upcoming Events", profile_events_path(@profile) %></p>
   <% end %>

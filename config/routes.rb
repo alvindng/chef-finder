@@ -12,7 +12,19 @@ Rails.application.routes.draw do
   resources :profiles do
     resources :dishes
   end
+
   resources :profiles do
     resources :events
   end
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply, :restore, :mark_as_read, :mark_as_unread
+    end
+    collection do
+      delete :empty_trash
+    end
+  end
+
+  resources :messages, only: [:new, :create]
 end
