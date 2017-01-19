@@ -5,8 +5,13 @@
 
   <h2>Create account</h2>
   <div class="field">
+    <%= f.label :name %>
+    <p><%= f.text_field :name, :html => {:class => "form-group"}, autofocus: true %></p>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email%>
   </div>
 
   <div class="field">

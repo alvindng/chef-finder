@@ -7,6 +7,17 @@ class UsersController < ApplicationController
   def show
   end
 
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "Welcome to the site!"
+      redirect_to user_path(@user)
+    else
+      flash[:alert] = "There was a problem creating your account. Please try again."
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   def edit
     @user = User.find(params[:id])
     render :edit
