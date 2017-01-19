@@ -17,7 +17,7 @@ A Rails Web Application for finding and hiring a local chef to elevate your next
 
 ### Installation and Running Locally
 
-If you do not want to install and instead want to view a live version of the site, you can visit: https://chefexpress.herokuapp.com/ or,
+To view a live WIP version of the site, visit: https://cuisinary.herokuapp.com/ or,
 
 Open Terminal and clone the repository.  
 ```
@@ -36,7 +36,7 @@ Make sure Postgres is running on your local machine, then setup the database:
 $ rails db:setup db:test:prepare
 ```
 
-Create a Google project at `https://console.developers.google.com` and create an API key. Once you have done this, create a .env file in your the project directory and insert the following code.
+Create a Google project at `https://console.developers.google.com` and create an API key. Then create a .env file in your the project directory and insert the following code:
 ```
 GMAPS_KEY=YOUR_API_KEY_HERE
 ```
